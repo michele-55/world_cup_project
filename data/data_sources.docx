@@ -1,0 +1,15 @@
+"test.csv" e "train.csv" comes from https://www.kaggle.com/datasets/harrachimustapha/fifa-world-cup-team-dataset
+
+"to_confront__FIFA_ranking.csv" (ex "international_matches.csv") comes from https://github.com/myatminkhant123/FIFA_WorldCup2022_Match_Prediction
+
+Possible new data @ https://github.com/mominullptr/FIFA-World-Cup-2026-Dataset, it is only 2026 world cup though
+
+Here https://www.kaggle.com/datasets/abecklas/fifa-world-cup there are historical matches with some more features
+
+Here https://www.kaggle.com/datasets/nawfeelrahman1124444/the-ultimate-fifa-world-cup-dataset-1930-to-2026?select=wc_matches_historical.csv other historical data
+
+See this as well https://www.kaggle.com/datasets/decodedasad/fifa-world-cup-advanced-predictive-2002-2022
+
+to_possibly_enrich_results(ex wxmatches.csv) comes from ???
+
+Here some code inspiration as well (training a Random Forest) https://github.com/myatminkhant123/FIFA_WorldCup2022_Match_Prediction/tree/main
