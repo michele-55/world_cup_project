@@ -1,0 +1,52 @@
+World Cup notes: features: 
+
+import kagglehub
+
+# Download latest version
+path = kagglehub.dataset_download("swaptr/fifa-wc-2026-matches")  ha senso prendere anche questo per dati tipo possesso palla anche se non lo abbiamo storici e altro
+
+print("Path to dataset files:", path)
+
+
+# Download latest version
+path = kagglehub.dataset_download("swaptr/fifa-wc-2026-players")
+
+print("Path to dataset files:", path)
+
+
+# # Download latest version
+# path = kagglehub.dataset_download("harrachimustapha/fifa-world-cup-team-dataset") # market value fatto
+
+# print("Path to dataset files:", path)
+
+
+# Download latest version
+path = kagglehub.dataset_download("abecklas/fifa-world-cup") # niente di interessante
+
+print("Path to dataset files:", path)
+
+
+# Download latest version
+path = kagglehub.dataset_download("nawfeelrahman1124444/the-ultimate-fifa-world-cup-dataset-1930-to-2026") # ci potremmo prendere l'elo ma lo mette uguale in ogni competizione
+
+print("Path to dataset files:", path)
+
+
+
+
+# # per calcolare l'elo K è un parametro che varia in base alla competizione, G varia in base alla differenza reti (se 0 o 1 vale 1, 2 vale 3/2, da 3 in poi vale (11+d)/8),
+# # W vale 1 se vittoria, 0.5 se pareggio e 0 in caso di sconfitta (le formule le ho prese da wikipedia)                  !!!!da inserire il bonus casa o trasferta
+
+# # mod = hist_matches['tournament'].value_counts()
+# # print(mod)
+
+# hist_matches['elo_pre_match_home'] = 1550
+
+# hist_matches['elo_pre_match_away'] = 1550
+
+# K = {'world cup':60, 'continental competition':50, 'qualification':40, 'altri':30, 'amichevoli':20}
+
+# Eh = 1/(1 + 10^(-(hist_matches['elo_pre_match_home'].shift(1) - hist_matches['elo_pre_match_away'].shift(1))/400))
+# Ea = 1 - Eh
+
+# hist_matches['elo_pre_match_home'] = hist_matches['elo_pre_match_home'].shift(1) + K*G*((1 if hist_matches['home_score'].shift(1) > hist_matches['away_score'].shift(1) else (0.5 if hist_matches['home_score'].shift(1) == hist_matches['away_score'].shift(1) else 0)) - Eh)
