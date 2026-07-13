@@ -6,18 +6,18 @@ import numpy as np
 import xgboost as xgb
 
 
-hist_matches = pd.read_csv(r"C:\Users\Flavio\OneDrive\Progetti\World Cup\results.csv", sep=';')
+hist_matches = pd.read_csv(r"data\results.csv", sep=';')
 hist_matches['date'] = pd.to_datetime(hist_matches['date'])
 hist_matches = hist_matches.iloc[:, 0:6]    # .dropna() droppa solo le ultime righe dei quarti
 
 # print(hist_matches)
 
-teams_data_train = pd.read_csv(r'C:\Users\Flavio\OneDrive\Progetti\World Cup\train.csv', sep=';')  # non c'è il market value per il 2002
+teams_data_train = pd.read_csv(r'data\train.csv', sep=';')  # non c'è il market value per il 2002
 columns = list(range(0, 9)) + [10, 11, 13]
 print(f"DataFrame total columns: {teams_data_train.shape[1]}")
 teams_data_train = teams_data_train.iloc[:, columns]
 
-teams_data_test = pd.read_csv(r'C:\Users\Flavio\OneDrive\Progetti\World Cup\test.csv')    # sia nel train che test dataset presi non viene fatto dropna()
+teams_data_test = pd.read_csv(r'data\test.csv')    # sia nel train che test dataset presi non viene fatto dropna()
 # perchè si perdono alcune righe per via di variabili poco importanti che non ci porteremo dietro
 columns = list(range(0, 9)) + [10, 11, 13]
 teams_data_test = teams_data_test.iloc[:, columns]
